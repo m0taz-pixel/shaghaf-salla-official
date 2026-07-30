@@ -1,10 +1,9 @@
-{
-    "name": {
-        "ar": "رائد",
-        "en": "Theme Raed"
-    },
-    "repository": "https://github.com/SallaApp/theme-raed",
-    "author_email": "support@salla.sa",
+"name": {
+  "ar": "شغف",
+  "en": "Shaghaf"
+},
+    "repository": "https://github.com/m0taz-pixel/shaghaf-salla-official",
+    "author_email": "mz1420@hotmail.com",
     "features": [
         "mega-menu",
         "fonts",
