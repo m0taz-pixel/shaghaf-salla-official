@@ -1,0 +1,125 @@
+{% set is_ar = theme.is_rtl %}
+{% set services = is_ar ? [
+  {
+    number: '01',
+    icon: 'admission',
+    title: 'القبول الجامعي',
+    text: 'نقارن الخيارات ونجهّز ملفك للتخصص والجامعة الأنسب.',
+    url: '#universities'
+  },
+  {
+    number: '02',
+    icon: 'language',
+    title: 'معاهد اللغة',
+    text: 'نرشّح البرنامج والمدينة والمدة التي تناسب مستواك.',
+    url: '#institutes'
+  },
+  {
+    number: '03',
+    icon: 'visa',
+    title: 'التأشيرة الطلابية',
+    text: 'نرتّب المتطلبات ونتابع معك مسار الطلب خطوة بخطوة.',
+    url: '/pages/contact-us'
+  },
+  {
+    number: '04',
+    icon: 'home',
+    title: 'السكن والاستقبال',
+    text: 'خيارات مدروسة للسكن وترتيب واضح لأيامك الأولى.',
+    url: '/pages/contact-us'
+  },
+  {
+    number: '05',
+    icon: 'support',
+    title: 'المتابعة حتى الوصول',
+    text: 'نبقى قريبين منك قبل السفر وبعد وصولك إلى ماليزيا.',
+    url: '#steps'
+  }
+] : [
+  {
+    number: '01',
+    icon: 'admission',
+    title: 'University admission',
+    text: 'We compare options and prepare your file for the right programme and university.',
+    url: '#universities'
+  },
+  {
+    number: '02',
+    icon: 'language',
+    title: 'Language institutes',
+    text: 'We match your level with the right programme, city and study duration.',
+    url: '#institutes'
+  },
+  {
+    number: '03',
+    icon: 'visa',
+    title: 'Student visa',
+    text: 'We organise the requirements and guide you through every application stage.',
+    url: '/pages/contact-us'
+  },
+  {
+    number: '04',
+    icon: 'home',
+    title: 'Housing and arrival',
+    text: 'Thoughtful accommodation options and a clear plan for your first days.',
+    url: '/pages/contact-us'
+  },
+  {
+    number: '05',
+    icon: 'support',
+    title: 'Support through arrival',
+    text: 'We stay close before departure and after you arrive in Malaysia.',
+    url: '#steps'
+  }
+] %}
+
+<section id="services" class="shaghaf-section shaghaf-services" data-testid="store-home-services">
+  <div class="container">
+    <div class="shaghaf-section__head">
+      <span class="shaghaf-eyebrow">
+        <span class="shaghaf-eyebrow__dot"></span>
+        {{ is_ar ? 'كل ما تحتاجه في مكان واحد' : 'Everything you need, in one place' }}
+      </span>
+      <h2 class="shaghaf-section__title">
+        {{ is_ar ? 'خدمات تصنع رحلة دراسية أكثر هدوءاً' : 'Services for a calmer study journey' }}
+      </h2>
+      <p class="shaghaf-section__lead">
+        {{ is_ar
+          ? 'لا نقدّم لك قائمة خيارات فقط؛ نبني مساراً واضحاً من أول استشارة حتى تستقر في وجهتك.'
+          : 'We do more than provide a list of options. We build a clear path from your first consultation until you settle in.'
+        }}
+      </p>
+    </div>
+
+    <div class="shaghaf-services__grid">
+      {% for service in services %}
+        <a href="{{ service.url }}" class="shaghaf-service-card">
+          <div class="shaghaf-service-card__top">
+            <span class="shaghaf-service-card__icon" aria-hidden="true">
+              {% if service.icon == 'admission' %}
+                <svg viewBox="0 0 24 24"><path d="m3 10 9-5 9 5-9 5-9-5Z"/><path d="M7 12.2V17c2.8 2.1 7.2 2.1 10 0v-4.8M21 10v6"/></svg>
+              {% elseif service.icon == 'language' %}
+                <svg viewBox="0 0 24 24"><path d="M4 5h10v10H8l-4 4V5Z"/><path d="M9 9h7a4 4 0 0 1 4 4v6l-3-3h-5"/></svg>
+              {% elseif service.icon == 'visa' %}
+                <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17c1.2-2 6.8-2 8 0"/></svg>
+              {% elseif service.icon == 'home' %}
+                <svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>
+              {% else %}
+                <svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v5h3v-5H4Zm13 0v5h3v-5h-3ZM17 18c0 2-2 3-5 3"/></svg>
+              {% endif %}
+            </span>
+            <span class="shaghaf-service-card__number">{{ service.number }}</span>
+          </div>
+
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.text }}</p>
+
+          <span class="shaghaf-service-card__link">
+            {{ is_ar ? 'اعرف المزيد' : 'Learn more' }}
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

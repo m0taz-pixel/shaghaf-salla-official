@@ -275,6 +275,157 @@
   }
 }
 
+.shaghaf-services {
+  background:
+    radial-gradient(circle at 10% 0, rgba(209, 174, 99, 0.09), transparent 25rem),
+    var(--shaghaf-white);
+}
+
+.shaghaf-services__grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.shaghaf-service-card {
+  position: relative;
+  display: flex;
+  min-height: 17rem;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.4rem;
+  border: 1px solid var(--shaghaf-line);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--shaghaf-ink);
+  box-shadow: 0 10px 30px rgba(6, 22, 42, 0.04);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+
+  &::after {
+    position: absolute;
+    right: -3rem;
+    bottom: -3rem;
+    width: 8rem;
+    height: 8rem;
+    border: 1px solid rgba(185, 145, 66, 0.15);
+    border-radius: 999px;
+    content: '';
+    transition: transform 300ms ease;
+  }
+
+  h3 {
+    margin: 2rem 0 0;
+    color: var(--shaghaf-navy-950);
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  p {
+    margin: 0.7rem 0 1.4rem;
+    color: var(--shaghaf-muted);
+    font-size: 0.86rem;
+    line-height: 1.8;
+  }
+
+  &:hover {
+    border-color: rgba(185, 145, 66, 0.55);
+    box-shadow: var(--shaghaf-shadow);
+    color: var(--shaghaf-ink);
+    transform: translateY(-5px);
+
+    &::after {
+      transform: scale(1.28);
+    }
+
+    .shaghaf-service-card__icon {
+      border-color: transparent;
+      background: var(--shaghaf-gold-500);
+      color: var(--shaghaf-navy-950);
+    }
+  }
+}
+
+.shaghaf-service-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.shaghaf-service-card__icon {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border: 1px solid rgba(185, 145, 66, 0.25);
+  border-radius: 1rem;
+  background: var(--shaghaf-sand);
+  color: var(--shaghaf-gold-600);
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+
+  svg {
+    width: 1.55rem;
+    height: 1.55rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.55;
+  }
+}
+
+.shaghaf-service-card__number {
+  color: rgba(16, 34, 56, 0.26);
+  font-family: sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.shaghaf-service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  color: var(--shaghaf-gold-600);
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+  }
+
+  [dir='rtl'] & svg {
+    transform: scaleX(-1);
+  }
+}
+
+@media (min-width: 36rem) {
+  .shaghaf-services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .shaghaf-services__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .shaghaf-service-card {
+    min-height: 19rem;
+  }
+}
+
 @media (min-width: 36rem) {
   .shaghaf-hero__actions {
     display: flex;
