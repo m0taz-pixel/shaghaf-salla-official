@@ -426,6 +426,239 @@
   }
 }
 
+.shaghaf-institutes {
+  border-block: 1px solid rgba(185, 145, 66, 0.13);
+  background:
+    linear-gradient(135deg, rgba(248, 244, 235, 0.94), rgba(255, 255, 255, 0.88)),
+    var(--shaghaf-sand);
+}
+
+.shaghaf-institutes__intro {
+  display: grid;
+  gap: 1rem;
+  align-items: end;
+}
+
+.shaghaf-institutes__compare {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid rgba(185, 145, 66, 0.22);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--shaghaf-navy-900);
+
+  &:hover {
+    border-color: rgba(185, 145, 66, 0.5);
+    color: var(--shaghaf-navy-900);
+  }
+
+  strong,
+  small {
+    display: block;
+  }
+
+  strong {
+    font-size: 0.85rem;
+  }
+
+  small {
+    margin-top: 0.18rem;
+    color: var(--shaghaf-muted);
+    font-size: 0.72rem;
+  }
+}
+
+.shaghaf-institutes__compare-icon {
+  display: grid;
+  width: 2.7rem;
+  height: 2.7rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.8rem;
+  background: var(--shaghaf-navy-950);
+  color: var(--shaghaf-gold-300);
+
+  svg {
+    width: 1.35rem;
+    height: 1.35rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.65;
+  }
+}
+
+.shaghaf-institutes__grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.shaghaf-institute-card {
+  position: relative;
+  display: flex;
+  min-height: 27rem;
+  flex-direction: column;
+  padding: 1.45rem;
+  border: 1px solid rgba(11, 33, 60, 0.09);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 42px rgba(6, 22, 42, 0.06);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+
+  &:hover {
+    box-shadow: var(--shaghaf-shadow);
+    transform: translateY(-5px);
+  }
+
+  h3 {
+    margin: 0.45rem 0 0;
+    color: var(--shaghaf-navy-950);
+    font-family: sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
+
+  > p {
+    margin: 0.85rem 0 1.2rem;
+    color: var(--shaghaf-muted);
+    font-size: 0.86rem;
+    line-height: 1.85;
+  }
+
+  ul {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    color: var(--shaghaf-ink);
+    font-size: 0.78rem;
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      fill: none;
+      stroke: var(--shaghaf-gold-600);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+    }
+  }
+}
+
+.shaghaf-institute-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.3rem;
+}
+
+.shaghaf-institute-card__mark {
+  display: grid;
+  width: 3.8rem;
+  height: 3.8rem;
+  place-items: center;
+  border: 1px solid rgba(209, 174, 99, 0.45);
+  border-radius: 1.1rem;
+  background:
+    linear-gradient(145deg, rgba(209, 174, 99, 0.16), rgba(209, 174, 99, 0.03)),
+    var(--shaghaf-white);
+  color: var(--shaghaf-navy-900);
+  font-family: sans-serif;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.shaghaf-institute-card__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--shaghaf-muted);
+  font-size: 0.7rem;
+
+  svg {
+    width: 0.9rem;
+    height: 0.9rem;
+    fill: none;
+    stroke: var(--shaghaf-gold-600);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+  }
+}
+
+.shaghaf-institute-card__type {
+  color: var(--shaghaf-gold-600);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.shaghaf-institute-card__action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(11, 33, 60, 0.08);
+  color: var(--shaghaf-navy-900);
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: var(--shaghaf-gold-600);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+  }
+
+  [dir='rtl'] & svg {
+    transform: scaleX(-1);
+  }
+
+  &:hover {
+    color: var(--shaghaf-gold-600);
+  }
+}
+
+.shaghaf-institutes__note {
+  max-width: 48rem;
+  margin: 1.25rem auto 0;
+  color: var(--shaghaf-muted);
+  font-size: 0.68rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .shaghaf-institutes__intro {
+    grid-template-columns: minmax(0, 1fr) 18rem;
+  }
+
+  .shaghaf-institutes__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 3rem;
+  }
+}
+
 @media (min-width: 36rem) {
   .shaghaf-hero__actions {
     display: flex;

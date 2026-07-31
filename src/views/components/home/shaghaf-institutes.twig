@@ -1,0 +1,123 @@
+{% set is_ar = theme.is_rtl %}
+{% set institutes = is_ar ? [
+  {
+    mark: 'ELS',
+    name: 'ELS Malaysia',
+    type: 'مسار لغة أكاديمي',
+    location: 'كوالالمبور',
+    detail: 'خيار مناسب للطلاب الذين يريدون تقوية الإنجليزية قبل الانتقال إلى الدراسة الجامعية.',
+    tags: ['لغة مكثفة', 'تحضير أكاديمي']
+  },
+  {
+    mark: 'EMS',
+    name: 'EMS Language Centre',
+    type: 'إنجليزية مكثفة',
+    location: 'وسط كوالالمبور',
+    detail: 'بيئة دولية في قلب المدينة مع خيارات تساعدك على تطوير التواصل والثقة باللغة.',
+    tags: ['تعليم دولي', 'موقع مركزي']
+  },
+  {
+    mark: 'AW',
+    name: 'Awesome Academy',
+    type: 'برامج إنجليزية مرنة',
+    location: 'ماليزيا',
+    detail: 'برامج متنوعة تناسب من يبدأ من الأساس أو يستعد لمرحلة دراسية جديدة.',
+    tags: ['مستويات متعددة', 'أنشطة طلابية']
+  }
+] : [
+  {
+    mark: 'ELS',
+    name: 'ELS Malaysia',
+    type: 'Academic language pathway',
+    location: 'Kuala Lumpur',
+    detail: 'A strong option for students building their English before moving into university study.',
+    tags: ['Intensive English', 'Academic preparation']
+  },
+  {
+    mark: 'EMS',
+    name: 'EMS Language Centre',
+    type: 'Intensive English',
+    location: 'Central Kuala Lumpur',
+    detail: 'An international environment in the city centre focused on communication and confidence.',
+    tags: ['International learning', 'Central location']
+  },
+  {
+    mark: 'AW',
+    name: 'Awesome Academy',
+    type: 'Flexible English programmes',
+    location: 'Malaysia',
+    detail: 'Varied programmes for students starting from the basics or preparing for their next study stage.',
+    tags: ['Multiple levels', 'Student activities']
+  }
+] %}
+
+<section id="institutes" class="shaghaf-section shaghaf-institutes" data-testid="store-home-institutes">
+  <div class="container">
+    <div class="shaghaf-institutes__intro">
+      <div class="shaghaf-section__head">
+        <span class="shaghaf-eyebrow">
+          <span class="shaghaf-eyebrow__dot"></span>
+          {{ is_ar ? 'معاهد اللغة' : 'Language institutes' }}
+        </span>
+        <h2 class="shaghaf-section__title">
+          {{ is_ar ? 'ابدأ باللغة التي تفتح لك أبواب الجامعة' : 'Start with the language that opens university doors' }}
+        </h2>
+        <p class="shaghaf-section__lead">
+          {{ is_ar
+            ? 'نقارن لك البرنامج، الموقع، المدة ونمط الدراسة حتى تختار بثقة—من دون تعقيد.'
+            : 'We compare programme, location, duration and study format so you can choose with confidence.'
+          }}
+        </p>
+      </div>
+
+      <a href="/pages/contact-us" class="shaghaf-institutes__compare">
+        <span class="shaghaf-institutes__compare-icon">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 7h11M8 12h8M8 17h5"/><path d="M3.5 7h.01M3.5 12h.01M3.5 17h.01"/></svg>
+        </span>
+        <span>
+          <strong>{{ is_ar ? 'لست متأكداً من المعهد؟' : 'Not sure which institute?' }}</strong>
+          <small>{{ is_ar ? 'دع مستشار شغف يقارن الخيارات معك' : 'Let a Shaghaf adviser compare your options' }}</small>
+        </span>
+      </a>
+    </div>
+
+    <div class="shaghaf-institutes__grid">
+      {% for institute in institutes %}
+        <article class="shaghaf-institute-card">
+          <div class="shaghaf-institute-card__top">
+            <span class="shaghaf-institute-card__mark">{{ institute.mark }}</span>
+            <span class="shaghaf-institute-card__location">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              {{ institute.location }}
+            </span>
+          </div>
+
+          <span class="shaghaf-institute-card__type">{{ institute.type }}</span>
+          <h3>{{ institute.name }}</h3>
+          <p>{{ institute.detail }}</p>
+
+          <ul>
+            {% for tag in institute.tags %}
+              <li>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 12 3 3 7-7"/></svg>
+                {{ tag }}
+              </li>
+            {% endfor %}
+          </ul>
+
+          <a href="/pages/contact-us" class="shaghaf-institute-card__action">
+            {{ is_ar ? 'اسأل عن هذا الخيار' : 'Ask about this option' }}
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+
+    <p class="shaghaf-institutes__note">
+      {{ is_ar
+        ? 'نساعدك في مقارنة هذه الخيارات وغيرها وفق مستواك وموعد دراستك؛ القبول النهائي يخضع لمتطلبات كل معهد.'
+        : 'We help you compare these and other options around your level and start date; final admission is subject to each institute’s requirements.'
+      }}
+    </p>
+  </div>
+</section>
