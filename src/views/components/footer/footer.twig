@@ -8,7 +8,11 @@
       <div class="shaghaf-footer__brand-row">
         <a href="{{ link('/') }}" class="shaghaf-footer__brand" aria-label="{{ store.name }}">
           <span class="shaghaf-footer__logo">
-            <img src="{{ store.logo|cdn(180) }}" width="180" height="72" loading="lazy" alt="{{ store.name }} logo">
+            {% if store.logo %}
+              <img src="{{ store.logo|cdn(180) }}" width="180" height="72" loading="lazy" alt="{{ store.name }} logo">
+            {% else %}
+              <span class="shaghaf-footer__logo-letter" aria-hidden="true">{{ is_ar ? 'ش' : 'S' }}</span>
+            {% endif %}
           </span>
           <span class="shaghaf-footer__brand-copy">
             <strong>{{ store.name }}</strong>

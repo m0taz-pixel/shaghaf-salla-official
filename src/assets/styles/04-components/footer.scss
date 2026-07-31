@@ -163,6 +163,13 @@
     height: 100%;
     object-fit: contain;
   }
+
+  &-letter {
+    color: #d7b35f;
+    font-size: 1.85rem;
+    font-weight: 800;
+    line-height: 1;
+  }
 }
 
 .shaghaf-footer__brand-copy {
