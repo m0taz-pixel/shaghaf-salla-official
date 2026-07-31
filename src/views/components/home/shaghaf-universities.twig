@@ -1,0 +1,118 @@
+{% set is_ar = theme.is_rtl %}
+{% set universities = is_ar ? [
+  {
+    mark: 'UM',
+    name: 'Universiti Malaya',
+    location: 'كوالالمبور',
+    focus: 'برامج أكاديمية متنوعة',
+    text: 'خيار جامعي شامل للطلاب الذين يبحثون عن مسارات متعددة في بيئة أكاديمية دولية.'
+  },
+  {
+    mark: 'UTM',
+    name: 'Universiti Teknologi Malaysia',
+    location: 'ماليزيا',
+    focus: 'هندسة وتقنية',
+    text: 'وجهة مناسبة لمن يركّز على التخصصات الهندسية والتقنية والبحث التطبيقي.'
+  },
+  {
+    mark: 'APU',
+    name: 'Asia Pacific University',
+    location: 'كوالالمبور',
+    focus: 'تقنية وابتكار',
+    text: 'برامج عصرية في التقنية والأعمال ضمن مجتمع طلابي دولي متنوع.'
+  },
+  {
+    mark: 'TU',
+    name: 'Taylor’s University',
+    location: 'سوبانغ جايا',
+    focus: 'برامج جامعية متنوعة',
+    text: 'مجموعة واسعة من المسارات الأكاديمية وتجربة حرم حديثة للطلاب الدوليين.'
+  }
+] : [
+  {
+    mark: 'UM',
+    name: 'Universiti Malaya',
+    location: 'Kuala Lumpur',
+    focus: 'Broad academic choice',
+    text: 'A comprehensive option for students exploring multiple paths in an international academic setting.'
+  },
+  {
+    mark: 'UTM',
+    name: 'Universiti Teknologi Malaysia',
+    location: 'Malaysia',
+    focus: 'Engineering and technology',
+    text: 'A strong fit for students focused on engineering, technology and applied research.'
+  },
+  {
+    mark: 'APU',
+    name: 'Asia Pacific University',
+    location: 'Kuala Lumpur',
+    focus: 'Technology and innovation',
+    text: 'Contemporary technology and business programmes in a diverse international community.'
+  },
+  {
+    mark: 'TU',
+    name: 'Taylor’s University',
+    location: 'Subang Jaya',
+    focus: 'Wide programme choice',
+    text: 'A broad range of academic paths and a modern campus experience for international students.'
+  }
+] %}
+
+<section id="universities" class="shaghaf-section shaghaf-universities" data-testid="store-home-universities">
+  <div class="shaghaf-universities__ornament" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="shaghaf-universities__heading">
+      <div class="shaghaf-section__head">
+        <span class="shaghaf-eyebrow shaghaf-eyebrow--light">
+          <span class="shaghaf-eyebrow__dot"></span>
+          {{ is_ar ? 'الجامعات' : 'Universities' }}
+        </span>
+        <h2 class="shaghaf-section__title">
+          {{ is_ar ? 'جامعة تناسب تخصصك، ميزانيتك وطموحك' : 'A university aligned with your subject, budget and ambition' }}
+        </h2>
+        <p class="shaghaf-section__lead">
+          {{ is_ar
+            ? 'نبدأ من أهدافك، ثم نقارن شروط القبول والبرامج والموقع لنصل إلى قائمة قصيرة تستحق وقتك.'
+            : 'We begin with your goals, then compare admission requirements, programmes and location to create a shortlist worth your time.'
+          }}
+        </p>
+      </div>
+
+      <a href="/products" class="shaghaf-button shaghaf-button--gold">
+        <span>{{ is_ar ? 'استعرض خيارات الدراسة' : 'Explore study options' }}</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="shaghaf-universities__grid">
+      {% for university in universities %}
+        <article class="shaghaf-university-card" data-mark="{{ university.mark }}">
+          <span class="shaghaf-university-card__index">0{{ loop.index }}</span>
+          <div class="shaghaf-university-card__mark" aria-hidden="true">{{ university.mark }}</div>
+          <span class="shaghaf-university-card__focus">{{ university.focus }}</span>
+          <h3>{{ university.name }}</h3>
+          <p>{{ university.text }}</p>
+
+          <div class="shaghaf-university-card__footer">
+            <span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              {{ university.location }}
+            </span>
+            <a href="/pages/contact-us" aria-label="{{ is_ar ? 'اسأل عن ' ~ university.name : 'Ask about ' ~ university.name }}">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <p class="shaghaf-universities__note">
+      {{ is_ar
+        ? 'الأسماء المعروضة أمثلة لخيارات يمكن مقارنتها، ولا تمثل ادعاء شراكة حصرية. يخضع القبول لمتطلبات الجامعة والبرنامج.'
+        : 'The names shown are examples of options we can compare and do not imply an exclusive partnership. Admission is subject to university and programme requirements.'
+      }}
+    </p>
+  </div>
+</section>
