@@ -75,6 +75,7 @@
 @import './04-components/user-menu';
 @import './04-components/user-pages';
 @import './04-components/home-blocks';
+@import './04-components/shaghaf-home';
 @import './04-components/slider';
 @import './04-components/product';
 @import './04-components/brands';
@@ -93,88 +94,3 @@
 
 @import 'lite-youtube-embed/src/lite-yt-embed.css';
 @import 'mmenu-light/dist/mmenu-light.css';
-.shaghaf-hero {
-  padding: 90px 0;
-  background: linear-gradient(135deg, #0b1f3a 0%, #123b66 100%);
-  color: #fff;
-  direction: rtl;
-  text-align: right;
-}
-
-.shaghaf-hero__content {
-  max-width: 720px;
-}
-
-.shaghaf-hero__eyebrow {
-  display: inline-block;
-  margin-bottom: 18px;
-  color: #d4af37;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.shaghaf-hero h1 {
-  margin: 0 0 20px;
-  font-size: clamp(36px, 5vw, 64px);
-  line-height: 1.2;
-  font-weight: 800;
-}
-
-.shaghaf-hero p {
-  margin: 0 0 30px;
-  max-width: 620px;
-  font-size: 18px;
-  line-height: 1.9;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.shaghaf-hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.shaghaf-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 0 24px;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.shaghaf-btn--primary {
-  background: #d4af37;
-  color: #0b1f3a;
-}
-
-.shaghaf-btn--secondary {
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  color: #fff;
-}
-
-.shaghaf-btn:hover {
-  transform: translateY(-2px);
-}
-
-@media (max-width: 767px) {
-  .shaghaf-hero {
-    padding: 60px 0;
-    text-align: center;
-  }
-
-  .shaghaf-hero__content {
-    margin: 0 auto;
-  }
-
-  .shaghaf-hero__actions {
-    justify-content: center;
-  }
-
-  .shaghaf-btn {
-    width: 100%;
-  }
-}

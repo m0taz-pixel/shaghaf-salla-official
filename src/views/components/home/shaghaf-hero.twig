@@ -1,27 +1,62 @@
-<section class="shaghaf-hero">
-  <div class="container">
+{% set is_ar = theme.is_rtl %}
+
+<section id="hero" class="shaghaf-hero" data-testid="store-home-hero">
+  <div class="shaghaf-hero__media" aria-hidden="true"></div>
+
+  <div class="container shaghaf-hero__container">
     <div class="shaghaf-hero__content">
-      <span class="shaghaf-hero__eyebrow">
-        الدراسة في ماليزيا تبدأ من هنا
+      <span class="shaghaf-eyebrow shaghaf-eyebrow--light">
+        <span class="shaghaf-eyebrow__dot"></span>
+        {{ is_ar ? 'من السعودية إلى ماليزيا' : 'From Saudi Arabia to Malaysia' }}
       </span>
 
-      <h1>
-        رحلتك إلى ماليزيا تبدأ مع شغف
+      <h1 class="shaghaf-hero__title">
+        {% if is_ar %}
+          مستقبلك الدراسي في ماليزيا يبدأ <em>بخطوة واثقة</em>
+        {% else %}
+          Your study future in Malaysia starts with <em>one confident step</em>
+        {% endif %}
       </h1>
 
-      <p>
-        قبول جامعي، معاهد لغة، تأشيرة، سكن ومتابعة حتى الوصول.
+      <p class="shaghaf-hero__lead">
+        {{ is_ar
+          ? 'من اختيار المعهد أو الجامعة إلى القبول والتأشيرة والسكن—نرتّب التفاصيل ونبقى معك حتى تصل.'
+          : 'From choosing an institute or university to admission, visa and accommodation—we organise the details and stay with you until arrival.'
+        }}
       </p>
 
       <div class="shaghaf-hero__actions">
-        <a href="/products" class="shaghaf-btn shaghaf-btn--primary">
-          استعرض المعاهد
+        <a href="/pages/contact-us" class="shaghaf-button shaghaf-button--gold">
+          <span>{{ is_ar ? 'ابدأ استشارتك' : 'Start your consultation' }}</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
         </a>
 
-        <a href="/pages/contact-us" class="shaghaf-btn shaghaf-btn--secondary">
-          ابدأ التقديم
+        <a href="/products" class="shaghaf-button shaghaf-button--ghost">
+          {{ is_ar ? 'استكشف خيارات الدراسة' : 'Explore study options' }}
         </a>
       </div>
+
+      <ul class="shaghaf-hero__assurances" aria-label="{{ is_ar ? 'مزايا الخدمة' : 'Service benefits' }}">
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 12 3 3 7-7"/></svg>
+          {{ is_ar ? 'استشارة بالعربية' : 'Arabic-speaking guidance' }}
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 12 3 3 7-7"/></svg>
+          {{ is_ar ? 'خطة تناسب أهدافك' : 'A plan built around you' }}
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 12 3 3 7-7"/></svg>
+          {{ is_ar ? 'متابعة حتى الوصول' : 'Support through arrival' }}
+        </li>
+      </ul>
     </div>
   </div>
+
+  <a href="#services" class="shaghaf-hero__scroll" aria-label="{{ is_ar ? 'انتقل إلى الخدمات' : 'Continue to services' }}">
+    <span>{{ is_ar ? 'اكتشف كيف نساعدك' : 'See how we help' }}</span>
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+  </a>
 </section>

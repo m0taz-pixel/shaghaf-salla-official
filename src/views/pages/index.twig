@@ -8,33 +8,9 @@
 {% extends "layouts.master" %}
 
 {% block content %}
-<section class="shaghaf-hero">
-  <div class="container">
-    <div class="shaghaf-hero__content">
-      <span class="shaghaf-hero__eyebrow">
-        الدراسة في ماليزيا تبدأ من هنا
-      </span>
-
-      <h1>
-        رحلتك إلى ماليزيا تبدأ مع شغف
-      </h1>
-
-      <p>
-        قبول جامعي، معاهد لغة، تأشيرة، سكن ومتابعة حتى الوصول.
-      </p>
-
-      <div class="shaghaf-hero__actions">
-        <a href="/products" class="shaghaf-btn shaghaf-btn--primary">
-          استعرض المعاهد
-        </a>
-
-        <a href="/pages/contact-us" class="shaghaf-btn shaghaf-btn--secondary">
-          ابدأ التقديم
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="shaghaf-home" data-testid="store-premium-home">
+  {% component 'home.shaghaf-hero' %}
+</div>
 {% endblock %}
 
 {% block scripts %}
