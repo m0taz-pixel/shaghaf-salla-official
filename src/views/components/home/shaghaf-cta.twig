@@ -1,0 +1,55 @@
+{% set is_ar = theme.is_rtl %}
+
+<section id="start" class="shaghaf-section shaghaf-cta" data-testid="store-home-final-cta">
+  <div class="container">
+    <div class="shaghaf-cta__panel">
+      <div class="shaghaf-cta__route" aria-hidden="true">
+        <span class="shaghaf-cta__route-dot shaghaf-cta__route-dot--one"></span>
+        <span class="shaghaf-cta__route-dot shaghaf-cta__route-dot--two"></span>
+        <svg viewBox="0 0 410 230">
+          <path d="M18 198C82 79 180 241 252 124c41-67 80-71 140-94"/>
+          <path d="m375 26 17 4-5 17"/>
+        </svg>
+      </div>
+
+      <div class="shaghaf-cta__content">
+        <span class="shaghaf-eyebrow shaghaf-eyebrow--light">
+          <span class="shaghaf-eyebrow__dot"></span>
+          {{ is_ar ? 'لنبدأ من هدفك' : 'Let us start with your goal' }}
+        </span>
+        <h2>{{ is_ar ? 'خطوتك التالية أبسط مما تتخيّل' : 'Your next step is simpler than you think' }}</h2>
+        <p>
+          {{ is_ar
+            ? 'شاركنا التخصص أو البرنامج الذي تفكر فيه، وموعدك المتوقع. سنساعدك على ترتيب الصورة والخطوة الأولى.'
+            : 'Share the subject or programme you are considering and your expected start date. We will help organise the picture and your first step.'
+          }}
+        </p>
+
+        <div class="shaghaf-cta__actions">
+          <a href="/pages/contact-us" class="shaghaf-button shaghaf-button--gold">
+            <span>{{ is_ar ? 'ابدأ استشارتك' : 'Start your consultation' }}</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="/products" class="shaghaf-button shaghaf-button--ghost">
+            {{ is_ar ? 'تصفّح خيارات الدراسة' : 'Browse study options' }}
+          </a>
+        </div>
+
+        <ul class="shaghaf-cta__prompts">
+          <li>
+            <span>01</span>
+            {{ is_ar ? 'ما التخصص؟' : 'Which subject?' }}
+          </li>
+          <li>
+            <span>02</span>
+            {{ is_ar ? 'متى تبدأ؟' : 'When do you start?' }}
+          </li>
+          <li>
+            <span>03</span>
+            {{ is_ar ? 'ما ميزانيتك؟' : 'What is your budget?' }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
