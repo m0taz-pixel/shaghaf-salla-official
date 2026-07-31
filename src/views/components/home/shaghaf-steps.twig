@@ -1,0 +1,109 @@
+{% set is_ar = theme.is_rtl %}
+{% set steps = is_ar ? [
+  {
+    number: '01',
+    title: 'استشارة البداية',
+    text: 'نتعرّف على هدفك، تخصصك، ميزانيتك والموعد المناسب لك.'
+  },
+  {
+    number: '02',
+    title: 'خطة الخيارات',
+    text: 'نقارن المعاهد أو الجامعات ونرتّبها في قائمة قصيرة واضحة.'
+  },
+  {
+    number: '03',
+    title: 'تجهيز الملف',
+    text: 'نراجع المستندات ونرتّب طلبك وفق متطلبات الجهة التعليمية.'
+  },
+  {
+    number: '04',
+    title: 'القبول',
+    text: 'نتابع الطلب ونوضح لك أي تحديث أو متطلب جديد في وقته.'
+  },
+  {
+    number: '05',
+    title: 'التأشيرة والسكن',
+    text: 'ننسّق خطوات التأشيرة ونساعدك على تقييم خيارات السكن.'
+  },
+  {
+    number: '06',
+    title: 'الاستعداد والوصول',
+    text: 'قائمة سفر واضحة ومتابعة عملية حتى تبدأ أيامك الأولى بثقة.'
+  }
+] : [
+  {
+    number: '01',
+    title: 'First consultation',
+    text: 'We learn your goal, subject, budget and preferred start date.'
+  },
+  {
+    number: '02',
+    title: 'Options plan',
+    text: 'We compare institutes or universities and build a clear shortlist.'
+  },
+  {
+    number: '03',
+    title: 'File preparation',
+    text: 'We review documents and organise your application around each requirement.'
+  },
+  {
+    number: '04',
+    title: 'Admission',
+    text: 'We follow the application and explain every update or new request.'
+  },
+  {
+    number: '05',
+    title: 'Visa and housing',
+    text: 'We coordinate visa steps and help you assess accommodation options.'
+  },
+  {
+    number: '06',
+    title: 'Prepare and arrive',
+    text: 'A clear travel checklist and practical support through your first days.'
+  }
+] %}
+
+<section id="steps" class="shaghaf-section shaghaf-steps" data-testid="store-home-study-steps">
+  <div class="container">
+    <div class="shaghaf-section__head shaghaf-section__head--center">
+      <span class="shaghaf-eyebrow">
+        <span class="shaghaf-eyebrow__dot"></span>
+        {{ is_ar ? 'خطوات الدراسة' : 'Study steps' }}
+      </span>
+      <h2 class="shaghaf-section__title">
+        {{ is_ar ? 'من أول سؤال إلى أول يوم دراسي' : 'From your first question to your first day of study' }}
+      </h2>
+      <p class="shaghaf-section__lead">
+        {{ is_ar
+          ? 'مسار واحد واضح، وكل مرحلة فيه لها هدف ومخرجات تعرفها مسبقاً.'
+          : 'One clear path, with a purpose and expected outcome at every stage.'
+        }}
+      </p>
+    </div>
+
+    <ol class="shaghaf-steps__timeline">
+      {% for step in steps %}
+        <li class="shaghaf-step">
+          <div class="shaghaf-step__marker">
+            <span>{{ step.number }}</span>
+          </div>
+          <div class="shaghaf-step__content">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.text }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+
+    <div class="shaghaf-steps__start">
+      <div>
+        <strong>{{ is_ar ? 'جاهز للخطوة الأولى؟' : 'Ready for the first step?' }}</strong>
+        <span>{{ is_ar ? 'أرسل هدفك الدراسي ولنبدأ من الصورة الصحيحة.' : 'Tell us your study goal and we will begin with the right picture.' }}</span>
+      </div>
+      <a href="/pages/contact-us" class="shaghaf-button shaghaf-button--gold">
+        <span>{{ is_ar ? 'ابدأ الآن' : 'Start now' }}</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
