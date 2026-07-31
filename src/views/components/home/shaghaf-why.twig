@@ -1,0 +1,105 @@
+{% set is_ar = theme.is_rtl %}
+{% set reasons = is_ar ? [
+  {
+    number: '01',
+    title: 'نبدأ بك، لا بالقائمة',
+    text: 'نستمع إلى تخصصك وميزانيتك وموعدك قبل اقتراح أي خيار.'
+  },
+  {
+    number: '02',
+    title: 'نشرح الصورة كاملة',
+    text: 'متطلبات القبول، التسلسل الزمني والخطوة التالية بلغة واضحة.'
+  },
+  {
+    number: '03',
+    title: 'نقارن بموضوعية',
+    text: 'نضع الفروقات أمامك حتى تعرف لماذا يناسبك خيار أكثر من آخر.'
+  },
+  {
+    number: '04',
+    title: 'نبقى قريبين',
+    text: 'متابعة عملية للأسئلة والتفاصيل قبل السفر وخلال الوصول.'
+  }
+] : [
+  {
+    number: '01',
+    title: 'We begin with you',
+    text: 'Your subject, budget and timing come before any recommendation.'
+  },
+  {
+    number: '02',
+    title: 'We show the full picture',
+    text: 'Admission needs, timeline and next step explained in plain language.'
+  },
+  {
+    number: '03',
+    title: 'We compare objectively',
+    text: 'We put the differences in front of you so every choice has a clear reason.'
+  },
+  {
+    number: '04',
+    title: 'We stay close',
+    text: 'Practical support for questions and details before travel and through arrival.'
+  }
+] %}
+
+<section id="why-shaghaf" class="shaghaf-section shaghaf-why" data-testid="store-home-why-shaghaf">
+  <div class="container">
+    <div class="shaghaf-why__layout">
+      <div class="shaghaf-why__story">
+        <span class="shaghaf-why__story-label">{{ is_ar ? 'فلسفة شغف' : 'The Shaghaf approach' }}</span>
+
+        <div class="shaghaf-why__compass" aria-hidden="true">
+          <span></span>
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="45"/>
+            <path d="m75 40-9 26-26 9 9-26 26-9Z"/>
+            <circle cx="60" cy="60" r="4"/>
+          </svg>
+        </div>
+
+        <blockquote>
+          {{ is_ar
+            ? 'القرار الأفضل هو الذي تفهم أسبابه قبل أن تبدأ.'
+            : 'The best decision is one whose reasons you understand before you begin.'
+          }}
+        </blockquote>
+
+        <p>
+          {{ is_ar
+            ? 'لذلك نحول كثرة الخيارات إلى خطة قصيرة، مفهومة وقابلة للتنفيذ.'
+            : 'That is why we turn a crowded field of options into a short, clear and actionable plan.'
+          }}
+        </p>
+      </div>
+
+      <div class="shaghaf-why__content">
+        <div class="shaghaf-section__head">
+          <span class="shaghaf-eyebrow">
+            <span class="shaghaf-eyebrow__dot"></span>
+            {{ is_ar ? 'لماذا شغف؟' : 'Why Shaghaf?' }}
+          </span>
+          <h2 class="shaghaf-section__title">
+            {{ is_ar ? 'لأن رحلة كبيرة تستحق قراراً مدروساً' : 'Because a big journey deserves a considered decision' }}
+          </h2>
+          <p class="shaghaf-section__lead">
+            {{ is_ar
+              ? 'دورنا أن نجعل كل خطوة مفهومة؛ وأن تعرف ما الذي يحدث الآن، وما الذي يأتي بعدها.'
+              : 'Our role is to make every step understandable, so you always know what is happening now and what comes next.'
+            }}
+          </p>
+        </div>
+
+        <div class="shaghaf-why__grid">
+          {% for reason in reasons %}
+            <article class="shaghaf-reason">
+              <span>{{ reason.number }}</span>
+              <h3>{{ reason.title }}</h3>
+              <p>{{ reason.text }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
