@@ -1,0 +1,38 @@
+{% set is_ar = theme.is_rtl %}
+
+<section id="reviews" class="shaghaf-section shaghaf-reviews" data-testid="store-home-student-reviews">
+  <div class="container">
+    <div class="shaghaf-reviews__heading">
+      <div class="shaghaf-section__head">
+        <span class="shaghaf-eyebrow">
+          <span class="shaghaf-eyebrow__dot"></span>
+          {{ is_ar ? 'آراء الطلاب' : 'Student reviews' }}
+        </span>
+        <h2 class="shaghaf-section__title">
+          {{ is_ar ? 'تجارب حقيقية، بصوت أصحابها' : 'Real experiences, in students’ own words' }}
+        </h2>
+        <p class="shaghaf-section__lead">
+          {{ is_ar
+            ? 'نترك التجربة تتحدث كما نُشرت عبر المتجر، لتكوّن صورة أقرب عن رحلة شغف مع طلابها.'
+            : 'We let each published store review speak for itself, giving you a closer view of the Shaghaf student journey.'
+          }}
+        </p>
+      </div>
+
+      <div class="shaghaf-reviews__signal" aria-hidden="true">
+        <svg viewBox="0 0 80 58"><path d="M29 6C15 7 6 17 6 32v20h23V29H16c1-7 5-11 13-12V6Zm45 0C60 7 51 17 51 32v20h23V29H61c1-7 5-11 13-12V6Z"/></svg>
+      </div>
+    </div>
+
+    <div class="shaghaf-reviews__frame">
+      <div class="shaghaf-reviews__stars" aria-label="{{ is_ar ? 'تقييمات المتجر' : 'Store ratings' }}">
+        {% for star in 1..5 %}
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg>
+        {% endfor %}
+        <span>{{ is_ar ? 'تقييمات منشورة عبر المتجر' : 'Reviews published through the store' }}</span>
+      </div>
+
+      <salla-reviews limit="8" type="store"></salla-reviews>
+    </div>
+  </div>
+</section>

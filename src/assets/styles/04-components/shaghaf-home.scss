@@ -1181,6 +1181,119 @@
   }
 }
 
+.shaghaf-reviews {
+  background:
+    radial-gradient(circle at 88% 0, rgba(209, 174, 99, 0.1), transparent 22rem),
+    var(--shaghaf-white);
+}
+
+.shaghaf-reviews__heading {
+  display: grid;
+  gap: 1rem;
+  align-items: end;
+
+  .shaghaf-section__head {
+    margin-bottom: 0;
+  }
+}
+
+.shaghaf-reviews__signal {
+  display: none;
+  color: rgba(185, 145, 66, 0.16);
+
+  svg {
+    width: 7rem;
+    height: auto;
+    fill: currentColor;
+  }
+}
+
+.shaghaf-reviews__frame {
+  position: relative;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid rgba(11, 33, 60, 0.09);
+  border-radius: 1.4rem;
+  background:
+    linear-gradient(145deg, rgba(248, 244, 235, 0.75), rgba(255, 255, 255, 0.98)),
+    var(--shaghaf-white);
+  box-shadow: 0 22px 60px rgba(6, 22, 42, 0.08);
+
+  salla-reviews {
+    display: block;
+    min-height: 18rem;
+  }
+
+  .s-reviews-header-wrapper {
+    display: none;
+  }
+
+  .s-reviews-testimonial {
+    border: 1px solid rgba(11, 33, 60, 0.08);
+    border-radius: 1.1rem;
+    background: var(--shaghaf-white);
+    box-shadow: 0 12px 30px rgba(6, 22, 42, 0.05);
+  }
+
+  .s-reviews-testimonial__text p {
+    color: var(--shaghaf-muted);
+    line-height: 1.9;
+  }
+
+  .s-reviews-testimonial__icon {
+    color: var(--shaghaf-gold-500);
+    opacity: 0.25;
+  }
+}
+
+.shaghaf-reviews__stars {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--shaghaf-gold-500);
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+  }
+
+  span {
+    width: 100%;
+    margin-top: 0.25rem;
+    color: var(--shaghaf-muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 48rem) {
+  .shaghaf-reviews__heading {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .shaghaf-reviews__signal {
+    display: block;
+  }
+
+  .shaghaf-reviews__frame {
+    margin-top: 3rem;
+    padding: 1.5rem;
+  }
+
+  .shaghaf-reviews__stars {
+    flex-wrap: nowrap;
+
+    span {
+      width: auto;
+      margin-top: 0;
+      margin-inline-start: 0.5rem;
+    }
+  }
+}
+
 @media (min-width: 36rem) {
   .shaghaf-why__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
