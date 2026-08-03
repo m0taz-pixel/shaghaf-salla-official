@@ -10,14 +10,14 @@
 {% block content %}
 <div class="shaghaf-home" data-testid="store-premium-home">
   {% include "components/home/shaghaf-hero.twig" %}
-  {% component 'home.shaghaf-services' %}
-  {% component 'home.shaghaf-institutes' %}
-  {% component 'home.shaghaf-universities' %}
-  {% component 'home.shaghaf-why' %}
-  {% component 'home.shaghaf-steps' %}
-  {% component 'home.shaghaf-reviews' %}
-  {% component 'home.shaghaf-faq' %}
-  {% component 'home.shaghaf-cta' %}
+  {% include "components/home/shaghaf-services.twig" %}
+  {% include "components/home/shaghaf-institutes.twig" %}
+  {% include "components/home/shaghaf-universities.twig" %}
+  {% include "components/home/shaghaf-why.twig" %}
+  {% include "components/home/shaghaf-steps.twig" %}
+  {% include "components/home/shaghaf-reviews.twig" %}
+  {% include "components/home/shaghaf-faq.twig" %}
+  {% include "components/home/shaghaf-cta.twig" %}
 </div>
 {% endblock %}
 
