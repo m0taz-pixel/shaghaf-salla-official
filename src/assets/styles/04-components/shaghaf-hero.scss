@@ -1,0 +1,548 @@
+.shaghaf-hero {
+  --shaghaf-navy: #081b33;
+  --shaghaf-navy-soft: #12385e;
+  --shaghaf-gold: #b8954a;
+  --shaghaf-gold-soft: #e7d7ae;
+  --shaghaf-ink: #10243d;
+  --shaghaf-muted: #5d6a79;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(4.5rem, 7vw, 7rem) 0;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(184, 149, 74, 0.1), transparent 26rem),
+    linear-gradient(180deg, #fff 0%, #faf9f5 100%);
+  color: var(--shaghaf-ink);
+}
+
+.shaghaf-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: auto auto -15rem -11rem;
+  width: 32rem;
+  height: 32rem;
+  border: 1px solid rgba(184, 149, 74, 0.16);
+  border-radius: 50%;
+  content: '';
+}
+
+.shaghaf-hero__inner {
+  display: grid;
+  grid-template-areas: 'content visual';
+  grid-template-columns: minmax(0, 1.04fr) minmax(23rem, 0.96fr);
+  align-items: center;
+  gap: clamp(3rem, 6vw, 6.75rem);
+  direction: ltr;
+}
+
+.shaghaf-hero__content {
+  grid-area: content;
+  max-width: 46rem;
+  direction: rtl;
+  text-align: right;
+}
+
+.shaghaf-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.35rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(184, 149, 74, 0.28);
+  border-radius: 999px;
+  background: rgba(231, 215, 174, 0.22);
+  color: #7f632d;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.shaghaf-hero__eyebrow::before {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--shaghaf-gold);
+  box-shadow: 0 0 0 0.3rem rgba(184, 149, 74, 0.13);
+  content: '';
+}
+
+.shaghaf-hero__title {
+  max-width: 44rem;
+  margin: 0;
+  color: var(--shaghaf-navy);
+  font-size: clamp(2.6rem, 4.4vw, 4.65rem);
+  font-weight: 800;
+  line-height: 1.13;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.shaghaf-hero__description {
+  max-width: 42rem;
+  margin: 1.55rem 0 0;
+  color: var(--shaghaf-muted);
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  line-height: 1.95;
+}
+
+.shaghaf-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.shaghaf-hero__button {
+  display: inline-flex;
+  min-height: 3.4rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.65rem;
+  border: 1px solid transparent;
+  border-radius: 0.85rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.shaghaf-hero__button--primary {
+  background: var(--shaghaf-navy);
+  box-shadow: 0 0.8rem 1.8rem rgba(8, 27, 51, 0.18);
+  color: #fff;
+}
+
+.shaghaf-hero__button--secondary {
+  border-color: rgba(8, 27, 51, 0.2);
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--shaghaf-navy);
+}
+
+.shaghaf-hero__button:hover {
+  transform: translateY(-2px);
+}
+
+.shaghaf-hero__button--primary:hover {
+  background: #0d2949;
+  box-shadow: 0 1rem 2rem rgba(8, 27, 51, 0.22);
+  color: #fff;
+}
+
+.shaghaf-hero__button--secondary:hover {
+  border-color: rgba(184, 149, 74, 0.62);
+  background: #fff;
+  color: var(--shaghaf-navy);
+}
+
+.shaghaf-hero__button:focus-visible {
+  outline: 3px solid rgba(184, 149, 74, 0.52);
+  outline-offset: 3px;
+}
+
+.shaghaf-hero__trust {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 2.65rem 0 0;
+  padding: 1.35rem 0 0;
+  border-top: 1px solid rgba(8, 27, 51, 0.1);
+  list-style: none;
+}
+
+.shaghaf-hero__trust li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: #34485e;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.shaghaf-hero__check {
+  position: relative;
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: 0 0 auto;
+  margin-top: 0.1rem;
+  border-radius: 50%;
+  background: rgba(184, 149, 74, 0.14);
+}
+
+.shaghaf-hero__check::after {
+  position: absolute;
+  top: 0.29rem;
+  left: 0.31rem;
+  width: 0.52rem;
+  height: 0.3rem;
+  border-bottom: 2px solid #967634;
+  border-left: 2px solid #967634;
+  content: '';
+  transform: rotate(-45deg);
+}
+
+.shaghaf-hero__visual {
+  position: relative;
+  grid-area: visual;
+  min-height: clamp(27rem, 36vw, 34rem);
+  overflow: hidden;
+  border: 1px solid rgba(231, 215, 174, 0.32);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at 74% 22%, rgba(184, 149, 74, 0.35), transparent 13rem),
+    linear-gradient(145deg, #06182c 0%, #0b2747 58%, #123a60 100%);
+  box-shadow:
+    0 2.5rem 5rem rgba(8, 27, 51, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  direction: rtl;
+}
+
+.shaghaf-hero__visual::before,
+.shaghaf-hero__visual::after {
+  position: absolute;
+  border-radius: 50%;
+  content: '';
+}
+
+.shaghaf-hero__visual::before {
+  top: -6rem;
+  right: -5rem;
+  width: 18rem;
+  height: 18rem;
+  border: 1px solid rgba(231, 215, 174, 0.28);
+  box-shadow: 0 0 0 2.5rem rgba(184, 149, 74, 0.035);
+}
+
+.shaghaf-hero__visual::after {
+  bottom: -7rem;
+  left: -6rem;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.shaghaf-hero__grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.17;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+  mask-image: linear-gradient(135deg, transparent 2%, #000 45%, transparent 95%);
+}
+
+.shaghaf-hero__orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(231, 215, 174, 0.25);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-14deg);
+}
+
+.shaghaf-hero__orbit--outer {
+  width: 24rem;
+  height: 15rem;
+}
+
+.shaghaf-hero__orbit--inner {
+  width: 19rem;
+  height: 11.5rem;
+  transform: translate(-50%, -50%) rotate(32deg);
+}
+
+.shaghaf-hero__globe {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: clamp(10.5rem, 16vw, 13.5rem);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.2), transparent 21%),
+    linear-gradient(145deg, rgba(184, 149, 74, 0.92), rgba(122, 91, 36, 0.95));
+  box-shadow:
+    0 2rem 4rem rgba(2, 11, 23, 0.42),
+    inset -1.8rem -1.5rem 3rem rgba(65, 42, 13, 0.3),
+    inset 1rem 1rem 2rem rgba(255, 255, 255, 0.12);
+  transform: translate(-50%, -50%);
+}
+
+.shaghaf-hero__globe::before,
+.shaghaf-hero__globe::after,
+.shaghaf-hero__globe-line {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  content: '';
+}
+
+.shaghaf-hero__globe::before {
+  inset: 17% -24%;
+}
+
+.shaghaf-hero__globe::after {
+  inset: 35% -12%;
+}
+
+.shaghaf-hero__globe-line--vertical {
+  inset: -8% 28%;
+}
+
+.shaghaf-hero__globe-line--horizontal {
+  inset: 10% 40%;
+}
+
+.shaghaf-hero__destination {
+  position: absolute;
+  z-index: 2;
+  top: 43%;
+  right: 28%;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 0.18rem solid #fff;
+  border-radius: 50%;
+  background: var(--shaghaf-navy);
+  box-shadow: 0 0 0 0.45rem rgba(255, 255, 255, 0.18);
+}
+
+.shaghaf-hero__destination::after {
+  position: absolute;
+  top: 0.58rem;
+  left: 0.08rem;
+  width: 0.25rem;
+  height: 0.25rem;
+  background: #fff;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.shaghaf-hero__visual-card {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 2.65rem 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  width: min(13.5rem, 48%);
+  padding: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.91);
+  box-shadow: 0 1.2rem 2.5rem rgba(2, 12, 24, 0.24);
+  backdrop-filter: blur(0.8rem);
+}
+
+.shaghaf-hero__visual-card--top {
+  top: 15%;
+  left: 6%;
+}
+
+.shaghaf-hero__visual-card--bottom {
+  right: 6%;
+  bottom: 13%;
+}
+
+.shaghaf-hero__card-icon {
+  position: relative;
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 0.75rem;
+  background: rgba(184, 149, 74, 0.15);
+}
+
+.shaghaf-hero__card-icon--document::before {
+  position: absolute;
+  inset: 0.65rem 0.78rem;
+  border: 2px solid #9b7934;
+  border-radius: 0.18rem;
+  content: '';
+}
+
+.shaghaf-hero__card-icon--document::after {
+  position: absolute;
+  top: 1.05rem;
+  left: 1.02rem;
+  width: 0.62rem;
+  height: 0.4rem;
+  border-top: 2px solid #9b7934;
+  border-bottom: 2px solid #9b7934;
+  content: '';
+}
+
+.shaghaf-hero__card-icon--home::before {
+  position: absolute;
+  top: 0.82rem;
+  left: 0.78rem;
+  width: 1.05rem;
+  height: 1rem;
+  border: 2px solid #9b7934;
+  border-top: 0;
+  content: '';
+}
+
+.shaghaf-hero__card-icon--home::after {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.9rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-top: 2px solid #9b7934;
+  border-left: 2px solid #9b7934;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.shaghaf-hero__card-copy {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.shaghaf-hero__card-copy i {
+  display: block;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: #d8dde3;
+}
+
+.shaghaf-hero__card-copy i:first-child {
+  width: 82%;
+  background: #8b9aab;
+}
+
+.shaghaf-hero__card-copy i:last-child {
+  width: 58%;
+}
+
+.shaghaf-hero__card-status {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--shaghaf-gold);
+  box-shadow: 0 0 0 0.3rem rgba(184, 149, 74, 0.16);
+}
+
+@media (max-width: 991px) {
+  .shaghaf-hero {
+    padding: 4.5rem 0;
+  }
+
+  .shaghaf-hero__inner {
+    grid-template-areas:
+      'content'
+      'visual';
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3.5rem;
+  }
+
+  .shaghaf-hero__content {
+    max-width: 48rem;
+  }
+
+  .shaghaf-hero__visual {
+    width: min(100%, 43rem);
+    min-height: 30rem;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .shaghaf-hero {
+    padding: 3.25rem 0 3.75rem;
+  }
+
+  .shaghaf-hero__inner {
+    gap: 2.75rem;
+  }
+
+  .shaghaf-hero__title {
+    font-size: clamp(2.25rem, 10.7vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .shaghaf-hero__description {
+    margin-top: 1.15rem;
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .shaghaf-hero__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin-top: 1.6rem;
+  }
+
+  .shaghaf-hero__button {
+    width: 100%;
+  }
+
+  .shaghaf-hero__trust {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 1.15rem;
+  }
+
+  .shaghaf-hero__trust li {
+    font-size: 0.9rem;
+  }
+
+  .shaghaf-hero__visual {
+    min-height: 22.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .shaghaf-hero__orbit--outer {
+    width: 19rem;
+    height: 12rem;
+  }
+
+  .shaghaf-hero__orbit--inner {
+    width: 15rem;
+    height: 9rem;
+  }
+
+  .shaghaf-hero__visual-card {
+    grid-template-columns: 2.25rem 1fr auto;
+    width: min(11.5rem, 54%);
+    padding: 0.7rem;
+  }
+
+  .shaghaf-hero__card-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .shaghaf-hero__card-icon--document::before {
+    inset: 0.52rem 0.64rem;
+  }
+
+  .shaghaf-hero__card-icon--document::after {
+    top: 0.88rem;
+    left: 0.85rem;
+  }
+
+  .shaghaf-hero__card-icon--home::before {
+    top: 0.7rem;
+    left: 0.63rem;
+  }
+
+  .shaghaf-hero__card-icon--home::after {
+    top: 0.5rem;
+    left: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shaghaf-hero__button {
+    transition: none;
+  }
+}

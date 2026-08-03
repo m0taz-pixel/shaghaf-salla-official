@@ -272,6 +272,136 @@
     ],
     "components": [
         {
+            "key": "b1c7db77-84e9-4b2d-9821-3f3046862f19",
+            "title": {
+                "en": "Shaghaf Hero",
+                "ar": "واجهة شغف الرئيسية"
+            },
+            "icon": "sicon-image",
+            "path": "home.shaghaf-hero",
+            "is_default": true,
+            "fields": [
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "النص التمهيدي",
+                    "multilanguage": true,
+                    "id": "eyebrow",
+                    "value": "دراستك في ماليزيا تبدأ من هنا",
+                    "required": true,
+                    "format": "text",
+                    "minLength": 1,
+                    "maxLength": 100
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "العنوان الرئيسي",
+                    "multilanguage": true,
+                    "id": "heading",
+                    "value": "ابدأ رحلتك الدراسية في ماليزيا بثقة",
+                    "required": true,
+                    "format": "text",
+                    "minLength": 1,
+                    "maxLength": 140
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-typography",
+                    "label": "الوصف",
+                    "multilanguage": true,
+                    "id": "description",
+                    "value": "نساعدك في اختيار المعهد أو الجامعة المناسبة، استخراج القبول والتأشيرة، وترتيب السكن والاستقبال خطوة بخطوة.",
+                    "required": true,
+                    "format": "textarea",
+                    "minLength": 1,
+                    "maxLength": 280
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "نص الزر الرئيسي",
+                    "multilanguage": true,
+                    "id": "primary_label",
+                    "value": "استعرض المعاهد",
+                    "required": true,
+                    "format": "text",
+                    "minLength": 1,
+                    "maxLength": 50
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-link",
+                    "label": "رابط الزر الرئيسي",
+                    "id": "primary_url",
+                    "value": "/products",
+                    "required": true,
+                    "format": "text",
+                    "minLength": 1,
+                    "maxLength": 255
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-format-text-alt",
+                    "label": "نص الزر الثانوي",
+                    "multilanguage": true,
+                    "id": "secondary_label",
+                    "value": "استشارة مجانية",
+                    "required": true,
+                    "format": "text",
+                    "minLength": 1,
+                    "maxLength": 50
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-link",
+                    "label": "رابط الزر الثانوي",
+                    "id": "secondary_url",
+                    "value": "/pages/contact-us",
+                    "required": true,
+                    "format": "text",
+                    "minLength": 1,
+                    "maxLength": 255
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-check-circle",
+                    "label": "نقطة الثقة الأولى",
+                    "multilanguage": true,
+                    "id": "trust_point_1",
+                    "value": "قبول جامعي ومعاهد لغة",
+                    "required": true,
+                    "format": "text",
+                    "minLength": 1,
+                    "maxLength": 100
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-check-circle",
+                    "label": "نقطة الثقة الثانية",
+                    "multilanguage": true,
+                    "id": "trust_point_2",
+                    "value": "متابعة التأشيرة والسكن",
+                    "required": true,
+                    "format": "text",
+                    "minLength": 1,
+                    "maxLength": 100
+                },
+                {
+                    "type": "string",
+                    "icon": "sicon-check-circle",
+                    "label": "نقطة الثقة الثالثة",
+                    "multilanguage": true,
+                    "id": "trust_point_3",
+                    "value": "دعم عربي من البداية حتى الوصول",
+                    "required": true,
+                    "format": "text",
+                    "minLength": 1,
+                    "maxLength": 120
+                }
+            ]
+        },
+        {
             "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
             "title": {
                 "en": "Enhances Animated Images",

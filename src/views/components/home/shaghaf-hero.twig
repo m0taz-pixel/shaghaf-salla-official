@@ -1,27 +1,92 @@
-<section class="shaghaf-hero">
-  <div class="container">
-    <div class="shaghaf-hero__content">
-      <span class="shaghaf-hero__eyebrow">
-        الدراسة في ماليزيا تبدأ من هنا
-      </span>
+{#
+| Variable                | Type   | Description
+|-------------------------|--------|---------------------------------------------
+| component               | object | Merchant-editable Hero fields from twilight.json
+| component.eyebrow       | string | Short introductory line
+| component.heading       | string | Main Hero heading
+| component.description   | string | Supporting paragraph
+| component.primary_label | string | Primary action label
+| component.primary_url   | string | Primary action URL
+| component.secondary_label | string | Secondary action label
+| component.secondary_url | string | Secondary action URL
+| component.trust_point_1 | string | First trust statement
+| component.trust_point_2 | string | Second trust statement
+| component.trust_point_3 | string | Third trust statement
+| position                | int    | Component position on the homepage
+#}
+{% set hero_title_id = 'shaghaf-hero-title-' ~ (position|default(0)) %}
 
-      <h1>
-        رحلتك إلى ماليزيا تبدأ مع شغف
-      </h1>
+<section data-testid="store-home-shaghaf-hero" class="shaghaf-hero" aria-labelledby="{{ hero_title_id }}">
+    <div class="container">
+        <div class="shaghaf-hero__inner">
+            <div class="shaghaf-hero__content">
+                <p class="shaghaf-hero__eyebrow">
+                    {{ component.eyebrow|default('دراستك في ماليزيا تبدأ من هنا') }}
+                </p>
 
-      <p>
-        قبول جامعي، معاهد لغة، تأشيرة، سكن ومتابعة حتى الوصول.
-      </p>
+                <h1 id="{{ hero_title_id }}" class="shaghaf-hero__title">
+                    {{ component.heading|default('ابدأ رحلتك الدراسية في ماليزيا بثقة') }}
+                </h1>
 
-      <div class="shaghaf-hero__actions">
-        <a href="/products" class="shaghaf-btn shaghaf-btn--primary">
-          استعرض المعاهد
-        </a>
+                <p class="shaghaf-hero__description">
+                    {{ component.description|default('نساعدك في اختيار المعهد أو الجامعة المناسبة، استخراج القبول والتأشيرة، وترتيب السكن والاستقبال خطوة بخطوة.') }}
+                </p>
 
-        <a href="/pages/contact-us" class="shaghaf-btn shaghaf-btn--secondary">
-          ابدأ التقديم
-        </a>
-      </div>
+                <div class="shaghaf-hero__actions">
+                    <a href="{{ component.primary_url|default('/products')|e('html_attr') }}" class="shaghaf-hero__button shaghaf-hero__button--primary">
+                        {{ component.primary_label|default('استعرض المعاهد') }}
+                    </a>
+
+                    <a href="{{ component.secondary_url|default('/pages/contact-us')|e('html_attr') }}" class="shaghaf-hero__button shaghaf-hero__button--secondary">
+                        {{ component.secondary_label|default('استشارة مجانية') }}
+                    </a>
+                </div>
+
+                <ul class="shaghaf-hero__trust" aria-label="مزايا خدمات شغف">
+                    <li>
+                        <span class="shaghaf-hero__check" aria-hidden="true"></span>
+                        {{ component.trust_point_1|default('قبول جامعي ومعاهد لغة') }}
+                    </li>
+                    <li>
+                        <span class="shaghaf-hero__check" aria-hidden="true"></span>
+                        {{ component.trust_point_2|default('متابعة التأشيرة والسكن') }}
+                    </li>
+                    <li>
+                        <span class="shaghaf-hero__check" aria-hidden="true"></span>
+                        {{ component.trust_point_3|default('دعم عربي من البداية حتى الوصول') }}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="shaghaf-hero__visual" aria-hidden="true">
+                <span class="shaghaf-hero__grid"></span>
+                <span class="shaghaf-hero__orbit shaghaf-hero__orbit--outer"></span>
+                <span class="shaghaf-hero__orbit shaghaf-hero__orbit--inner"></span>
+
+                <div class="shaghaf-hero__globe">
+                    <span class="shaghaf-hero__globe-line shaghaf-hero__globe-line--vertical"></span>
+                    <span class="shaghaf-hero__globe-line shaghaf-hero__globe-line--horizontal"></span>
+                    <span class="shaghaf-hero__destination"></span>
+                </div>
+
+                <div class="shaghaf-hero__visual-card shaghaf-hero__visual-card--top">
+                    <span class="shaghaf-hero__card-icon shaghaf-hero__card-icon--document"></span>
+                    <span class="shaghaf-hero__card-copy">
+                        <i></i>
+                        <i></i>
+                    </span>
+                    <span class="shaghaf-hero__card-status"></span>
+                </div>
+
+                <div class="shaghaf-hero__visual-card shaghaf-hero__visual-card--bottom">
+                    <span class="shaghaf-hero__card-icon shaghaf-hero__card-icon--home"></span>
+                    <span class="shaghaf-hero__card-copy">
+                        <i></i>
+                        <i></i>
+                    </span>
+                    <span class="shaghaf-hero__card-status"></span>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
